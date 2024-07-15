@@ -59,4 +59,8 @@ $1$ia94Nrvd$z0h/GBXrU.13EaaqB46N80
 
 
 
-
+Commands to cover:  
+`passwd`  
+`chage`  
+`pwck`  
+`openssl passwd`  
