@@ -16,7 +16,7 @@ sudo ip addr add 192.168.1.110/24 dev eth0
 sudo ip route add default via 192.168.1.1 dev eth0
 ```
 
-### Run below command to get IP using DHCP
+### Get IP using DHCP (Temporary)
 ```bash
 dhclient
 ```
@@ -28,7 +28,24 @@ cat /etc/resolv.conf
 echo 'nameserver 8.8.8.8' >> /etc/resolv.conf
 ```
 
+### Get IP using DHCP (Permanent)
+
+```bash
+# Add below lines to "/etc/network/interfaces"
+## - eth0 is interface name
+## - alpinehost is hostname of the system
+auto eth0
+iface eth0 inet dhcp
+  hostname alpinehost
+
+# Restart networking service to acquire the IP
+rc-service networking restart
+
+### TO-DO: Check if without restarting network service, IP can be acquire.
+```
+
 ### Few commands
+
 ```bash
 ip --help
 ip link show
