@@ -57,9 +57,6 @@ block-beta
 ```
 
 
-
-
-
 ## Check if using LVM
 ```bash
 cat /etc/fstab
